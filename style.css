@@ -1,0 +1,26 @@
+body {
+  font-family: "Baskervville_SC variant0", Tofu;
+  margin: 0;
+  padding: 0;
+  background-color: #131313;
+}
+
+.div {
+  height: 100vh;
+}
+header {
+  font-size: 10px;
+  color: white;
+}
+
+.flex-container {
+  display: flex;
+  background-color: transparant;
+  margin: 100px;
+}
+
+.text-judul {
+font-size: 60px
+
+
+}
