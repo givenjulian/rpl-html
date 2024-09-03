@@ -8,25 +8,62 @@ body {
 .div {
   height: 100vh;
 }
+
+.div2 {
+  height: 100vh;
+  color: white;
+}
+
 header {
   font-size: 10px;
   color: white;
 }
 
-.flex-container {
-  display: flex;
+.grid-awal {
+  display: grid;
   background-color: transparant;
+  color: white;
   margin-top: 200px;
   margin-left: 270px;
 }
 
 .text-judul {
-font-size: 100px;
+  font-size: 100px;
+  }
+  
+  .text-bawahjudul {
+  font-size: 30px;
+  color: white;
+  }
+
+.flex-container-button {
+  display: flex;
+  width: 100px;
+  height: 70px;
 }
 
-.text-bawahjudul {
-font-size: 30px;
-color: white;
-margin-top: 10px;
-margin-left: 280px;
+.ul-navbar {
+  display: flex;
+
 }
+
+.li-navbar {
+  color: whitesmoke;
+  border-radius: 10%;
+  padding: 10px;
+
+}
+
+.grid2 {
+  display: grid;
+  background-color: transparant;
+  margin-top: 100px;
+  margin-left: 270px;
+}
+.text-judul2 {
+  font-size: 80px;
+  }
+
+  p {
+    font-size: 20px;
+  }
