@@ -16,11 +16,17 @@ header {
 .flex-container {
   display: flex;
   background-color: transparant;
-  margin: 100px;
+  margin-top: 200px;
+  margin-left: 270px;
 }
 
 .text-judul {
-font-size: 60px
+font-size: 100px;
+}
 
-
+.text-bawahjudul {
+font-size: 30px;
+color: white;
+margin-top: 10px;
+margin-left: 280px;
 }
