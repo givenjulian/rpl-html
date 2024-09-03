@@ -2,7 +2,8 @@ body {
   font-family: "Baskervville_SC variant0", Tofu;
   margin: 0;
   padding: 0;
-  background-color: #131313;
+  background: linear-gradient(to bottom right, #33cccc 0%, #ff99ff 100%);
+
 }
 
 .div {
@@ -23,42 +24,64 @@ header {
   display: grid;
   background-color: transparant;
   color: white;
-  margin-top: 200px;
-  margin-left: 270px;
+  margin-top: 120px;
+  margin-left: 180px;
+  margin-right: 500px;
 }
 
 .text-judul {
   font-size: 100px;
   }
   
-  .text-bawahjudul {
+.text-bawahjudul {
   font-size: 30px;
   color: white;
+  padding-bottom: 5%;
   }
 
-.flex-container-button {
-  display: flex;
-  width: 100px;
-  height: 70px;
+  .container-navbar{
+    background-color: rgba(255, 255, 255, 0.311);
+    margin-right: 58%;
+    border-radius: 15px;
 }
 
-.ul-navbar {
-  display: flex;
-
+.ul-navbar{ 
+    height: 70%;
+    padding: 0%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .li-navbar {
-  color: whitesmoke;
-  border-radius: 10%;
-  padding: 10px;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    list-style-type: none;
+    font-size: 20px;
+ 
+}
+
+.li-navbar:hover {
+    background-color: gray;
+    transition: .3s ease-in-out;
+    transition-delay: .1s;
 
 }
 
-.grid2 {
+.a-navbar{
+    color: whitesmoke;
+    text-decoration: none;
+
+}
+
+.grid3 {
   display: grid;
   background-color: transparant;
   margin-top: 100px;
-  margin-left: 270px;
+  margin-left: 180px;
 }
 .text-judul2 {
   font-size: 80px;
