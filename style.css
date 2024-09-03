@@ -20,6 +20,10 @@ header {
   color: white;
 }
 
+h1 {
+  color: white;
+}
+
 .grid-awal {
   display: grid;
   background-color: transparant;
@@ -31,49 +35,47 @@ header {
 
 .text-judul {
   font-size: 100px;
-  }
-  
+}
+
 .text-bawahjudul {
   font-size: 30px;
   color: white;
   padding-bottom: 5%;
-  }
-
-  .container-navbar{
-    background-color: rgba(255, 255, 255, 0.311);
-    margin-right: 58%;
-    border-radius: 15px;
 }
 
-.ul-navbar{ 
-    height: 70%;
-    padding: 0%;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.container-navbar {
+  background-color: rgba(255, 255, 255, 0.311);
+  border-radius: 15px;
+}
+
+.ul-navbar {
+  height: 70%;
+  padding: 0%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
 }
 
 .li-navbar {
-    color: white;
-    border-radius: 10px;
-    padding: 20px;
-    list-style-type: none;
-    font-size: 20px;
- 
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  list-style-type: none;
+  font-size: 20px;
+
 }
 
 .li-navbar:hover {
-    background-color: gray;
-    transition: .3s ease-in-out;
-    transition-delay: .1s;
+  background-color: gray;
+  transition: .3s ease-in-out;
+  transition-delay: .1s;
 
 }
 
-.a-navbar{
-    color: whitesmoke;
-    text-decoration: none;
+.a-navbar {
+  color: whitesmoke;
+  text-decoration: none;
 
 }
 
@@ -83,10 +85,31 @@ header {
   margin-top: 100px;
   margin-left: 180px;
 }
+
 .text-judul2 {
   font-size: 80px;
-  }
+}
 
-  p {
-    font-size: 20px;
-  }
+p {
+  font-size: 20px;
+  color: white;
+}
+
+.grid-4 {
+  padding: 50px;
+  margin: 0%;
+  display: grid;
+  justify-items: center;
+
+}
+
+.h1-prestasi {
+  margin: 0%;
+  font-size: 50px;
+}
+
+.img-prestasi {
+  size: 10%;
+
+
+}
