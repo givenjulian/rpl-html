@@ -1,55 +1,101 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bio Web</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
 
-</head>
 
-<body>
-
+  <body>
+    <div class='cursor' id="cursor"></div>
     <div class="div">
-        <header class="grid-awal">
-            <text class="text-judul">Hellow <br /> World!</text>
-            <text class="text-bawahjudul">Selamat datang. Liat-liat dulu gpp, bayar nya belakangan.</text>
-            <div class="container-navbar">
-                <ul class="ul-navbar">
-                    <li class="li-navbar">
-                        <a href="#hai" class="a-navbar">Hai Page</a>
-                    </li>
-                    <li class="li-navbar">
-                        <a href="#prestasi" class="a-navbar">Prestasi</a>
-                    </li>
-                </ul>
-            </div>
-        </header>
-
-        <div>
-
+      <header class="grid-awal">
+        <text class="text-judul"
+          >Hellow <br />
+          World!</text
+        >
+        <text class="text-bawahjudul"
+          >Selamat datang. Liat-liat dulu gpp, bayar nya belakangan.</text
+        >
+        <div class="container-navbar">
+          <ul class="ul-navbar">
+            <li class="li-navbar">
+              <a href="#hai" class="a-navbar">Hai Page</a>
+            </li>
+            <li class="li-navbar">
+              <a href="#prestasi" class="a-navbar">Prestasi</a>
+            </li>
+          </ul>
         </div>
+      </header>
 
+      <div></div>
     </div>
-    <div class="div2">
-        <header id="hai" class="grid3">
-            <text class="text-judul2">Hai</text>
-            <p>Perkenalkan namaku Given saat ini aku bersekolah di SMKS Petra yang berada di Surabaya.<br />
-                Kosong kan isinya? Iyalah aku bingung ngisi apa hehe.<br />
-                Jujur aku bingung mau nulis apa, tapi yang pasti Tuhan Yesus Memberkati.
-            </p>
-        </header>
+    <div id="hai" class="div2">
+      <header class="grid3">
+        <text class="text-judul2">Hai</text>
+        <p>
+          Perkenalkan namaku Given saat ini aku bersekolah di SMKS Petra yang
+          berada di Surabaya.<br />
+          Kosong kan isinya? Iyalah aku bingung ngisi apa hehe.<br />
+          Jujur aku bingung mau nulis apa, tapi yang pasti Tuhan Yesus
+          Memberkati.
+        </p>
+      </header>
     </div>
 
     <div class="div">
-        <header id="prestasi" class="grid-4">
-            <h1 class="h1-prestasi">Prestasi nihhhh cuy</h1>
-            <p>Yaa gpp lah meskipun masih 1</p>
-            <img class="img-prestasi" src="sertifikat.png" width="650" height="450">
-        </header>
-
-
+      <header id="prestasi" class="grid-4">
+        <h1 class="h1-prestasi">Prestasi nihhhh cuy</h1>
+        <p>Yaa gpp lah meskipun masih 1</p>
+        <img
+          class="img-prestasi"
+          src="sertifikat.png"          
+          width="650"
+          height="450"
+        />
+      </header>
     </div>
-</body>
+    <script>
+      function interpolateColor(color1, color2, factor) {
+        let result = color1.slice(1).match(/.{2}/g).map((c, i) => {
+          return Math.round(parseInt(c, 16) + (parseInt(color2.slice(1).match(/.{2}/g)[i], 16) - parseInt(c, 16)) * factor)
+                  .toString(16)
+                  .padStart(2, '0');
+        });
+        return `#${result.join('')}`;
+      }
+    
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.scrollY; //posisi scroll sekarang
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight; //tinggi dokumen
+        const scrollFactor = scrollTop / docHeight; //sekarang di berapa persen
+    
+        const colorA = '#DE6E4B';
+        const colorB = '#7FD1B9';
+        const colorC = '#E56399';
+        const colorD = '#F5B700';
+        
+        let newColor;
+    
+        if (scrollFactor <= 0.33) { //sebelum 33% a - b
+          newColor = interpolateColor(colorA, colorB, scrollFactor / 0.33); 
+        } else if (scrollFactor <= 0.66) { //sesudah 33% dan sebelum 66% b - c
+          newColor = interpolateColor(colorB, colorC, (scrollFactor - 0.33) / 0.33);
+        } else {
+          newColor = interpolateColor(colorC, colorD, (scrollFactor - 0.66) / 0.34);
+        }
+    
+        document.body.style.backgroundColor = newColor;
+      });
 
+      var cursor = document.getElementById("cursor");
+        document.body.addEventListener("mousemove", function(e) {
+          cursor.style.left = e.clientX + "px",
+            cursor.style.top = e.clientY + "px";
+        });
+        
+    </script>
+  </body>
 </html>
