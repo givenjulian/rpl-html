@@ -6,9 +6,8 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
-
   <body>
-    <div class='cursor' id="cursor"></div>
+    <div class="cursor" id="cursor"></div>
     <div class="div">
       <header class="grid-awal">
         <text class="text-judul"
@@ -51,51 +50,85 @@
         <p>Yaa gpp lah meskipun masih 1</p>
         <img
           class="img-prestasi"
-          src="sertifikat.png"          
+          src="sertifikat.png"
           width="650"
           height="450"
         />
       </header>
     </div>
+
     <script>
       function interpolateColor(color1, color2, factor) {
-        let result = color1.slice(1).match(/.{2}/g).map((c, i) => {
-          return Math.round(parseInt(c, 16) + (parseInt(color2.slice(1).match(/.{2}/g)[i], 16) - parseInt(c, 16)) * factor)
-                  .toString(16)
-                  .padStart(2, '0');
-        });
-        return `#${result.join('')}`;
+        let result = color1
+          .slice(1)
+          .match(/.{2}/g)
+          .map((c, i) => {
+            return Math.round(
+              parseInt(c, 16) +
+                (parseInt(color2.slice(1).match(/.{2}/g)[i], 16) -
+                  parseInt(c, 16)) *
+                  factor
+            )
+              .toString(16)
+              .padStart(2, "0");
+          });
+        return `#${result.join("")}`;
       }
-    
-      window.addEventListener('scroll', function() {
+
+      window.addEventListener("scroll", function () {
         const scrollTop = window.scrollY; //posisi scroll sekarang
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight; //tinggi dokumen
+        const docHeight =
+          document.documentElement.scrollHeight - window.innerHeight; //tinggi dokumen
         const scrollFactor = scrollTop / docHeight; //sekarang di berapa persen
-    
-        const colorA = '#DE6E4B';
-        const colorB = '#7FD1B9';
-        const colorC = '#E56399';
-        const colorD = '#F5B700';
-        
+
+        const colorA = "#DE6E4B";
+        const colorB = "#7FD1B9";
+        const colorC = "#E56399";
+        const colorD = "#F5B700";
+
         let newColor;
-    
-        if (scrollFactor <= 0.33) { //sebelum 33% a - b
-          newColor = interpolateColor(colorA, colorB, scrollFactor / 0.33); 
-        } else if (scrollFactor <= 0.66) { //sesudah 33% dan sebelum 66% b - c
-          newColor = interpolateColor(colorB, colorC, (scrollFactor - 0.33) / 0.33);
+
+        if (scrollFactor <= 0.33) {
+          //sebelum 33% a - b
+          newColor = interpolaeColor(colorA, colorB, scrollFactor / 0.33);
+        } else if (scrollFactor <= 0.66) {
+          //sesudah 33% dan sebelum 66% b - c
+          newColor = interpolateColor(
+            colorB,
+            colorC,
+            (scrollFactor - 0.33) / 0.33
+          );
         } else {
-          newColor = interpolateColor(colorC, colorD, (scrollFactor - 0.66) / 0.34);
+          newColor = interpolateColor(
+            colorC,
+            colorD,
+            (scrollFactor - 0.66) / 0.34
+          );
         }
-    
         document.body.style.backgroundColor = newColor;
       });
 
       var cursor = document.getElementById("cursor");
-        document.body.addEventListener("mousemove", function(e) {
-          cursor.style.left = e.clientX + "px",
-            cursor.style.top = e.clientY + "px";
-        });
-        
+      document.body.addEventListener("mousemove", function (e) {
+        (cursor.style.left = e.clientX + "px"),
+          (cursor.style.top = e.clientY + "px");
+      });
+
+      document.addEventListener(
+        "contextmenu",
+        function (e) {
+          e.preventDefault();
+        },
+        false
+      );
+
+      document.addEventListener(
+        "contextmenu",
+        function (e) {
+          e.preventDefault();
+        },
+        false
+      );
     </script>
   </body>
 </html>
